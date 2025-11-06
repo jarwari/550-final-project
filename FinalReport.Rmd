@@ -1,0 +1,26 @@
+---
+title: "Data 550 Final Project"
+author: "Julia Arwari"
+date: "`r Sys.Date()`"
+output: html_document
+---
+### Introduction 
+  The University of Illinois Urbana-Champaign Illinois Kids Development Study (IKIDS) is a prospective birth cohort in which women are enrolled early in pregnancy and their children are followed from birth through middle childhood to investigate the impact of prenatal exposures to chemicals and environmental factors on neurodevelopment. Champaign county, where the University is situated, is filled with farmland and produces millions of bushels of soybeans and corns every year. Women in the county may be exposed to herbicides through their work, diet, and surrounding environment. Roundup, a widely used herbicide, contains glyphosate as its primary chemical, which recent studies have linked to adverse health effects.
+  
+  For my ILE project, I'm completing a quantitative research project that seeks to assess the association between prenatal glyphosate exposure and oxidative stress biomarkers among IKIDS participants. An additional aim is to examine whether maternal demographic or lifestyle factors (e.g., age, BMI, education) modify the relationship between glyphosate exposure and oxidative stress. At this stage of the project, we're processing the data, gathering descriptives, and beginning our analysis by running unadjusted linear regressions between glyphosate and oxidative stress biomarkers before identifying potential confounders to adjust for in our next steps. The subset of the data I'm working with has 161 women. The average age is 31.01(3.88) and the average bmi is 26.05(6.23) among the sample. The majority of mothers in the subset have given birth one or more times (59.6%), are married (93.8%), are employed (87%), or hold a college or graduate degree (89.4%).
+
+### Table 1: Association between glyphosate exposure (IQR-scaled) and average oxidative stress biomarker outcomes (specific gravity adjusted)
+```{r table one, echo=FALSE}
+#| fig.align = "center",
+#| out.width = "600px"
+knitr::include_graphics(here::here("outputs/table_glyphosate_oxstress.png"))
+```
+This table shows the beta coefficients and 95% confidence intervals from the unadjusted linear regression of each oxidative stress outcome with glyphosate as the exposure. These outcomes reflect markers of oxidative stress found in urine. Isoprostanes and their isomers are different forms of compounds produced when fats in the body are damaged by free radicals, while prostaglandin is another compound linked to inflammation and oxidative stress. From these results, we determined that there were no statistically significant results from this model. As our next steps following these results, we decided to run multiple adjusted linear regression models adjusting for age, bmi, diet, education, race, and marital status.  
+
+### Figure 1: Relationship between glyphosate and isoprotanes biomarker estimated using a generalized additive model (GAM).
+```{r creating figure, echo=FALSE}
+#| fig.align = "center",
+#| out.width = "600px"
+knitr::include_graphics(here::here("outputs/figure_glyphosate_iso.png"))
+```
+After our initial results, my mentor and I also decided to run GAM models to evaluate whether the association between log-transformed glyphosate exposure and oxidative stress biomarkers was linear. The smooth curve (solid line) with 95% confidence intervals (dashed lines) indicates that the relationship between glyphosate and the isoprotane biomarker does not show strong evidence of non-linearity. Overall, the effect appears relatively flat with wide confidence bands. Based on this gut check, our next step is to proceed as described above.
