@@ -16,4 +16,4 @@ install:
 	
 clean:
 	rm -f outputs/*.png
-	rm -f report.html
+	rm -f FinalReport.html
