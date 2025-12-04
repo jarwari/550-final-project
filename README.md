@@ -1,11 +1,10 @@
-# build instructions 
-renv peer grading: in the terminal, run make install to synchronize the package library and then make to build the report.
-final instructions: run docker pull jarwari/final_project:latest and make docker-run to build the report. 
+# build final report
+run docker pull jarwari/final_project and make docker-run in the terminal to build the report. 
+## build image 
+run docker build -t jarwari/final_project
 ## repo description
 This repository contains all code and workflows for generating the final report for the project.  
 The workflow is fully automated using a `Makefile`, and the package environment is managed with `renv`.
-## Instructions
-Run make install and then make to synchronize the package library and build the report 
 ## file descriptions
 `code/01_make_table.R`
 - log tranforms outcomes, scales exposures by IQR, and performs unadjusted linear regressions
