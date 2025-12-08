@@ -23,7 +23,7 @@ docker-run:
 	mkdir report
 	docker run --rm \
 		-v "$$(PWD)/report":/home/rstudio/project/final_report \
-		final_project
+		jarwari/final_project
 
 	@echo "Report generated in the report/ directory."
 
