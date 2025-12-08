@@ -23,3 +23,6 @@ The workflow is fully automated using a `Makefile`, and the package environment 
 `Makefile`
 - contains rules and dependencies for building the report 
 - includes an `install` rule for restoring the project’s package environment
+
+`Dockerfile`
+- defines the containerized environment used to build the report.
